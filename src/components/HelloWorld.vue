@@ -49,7 +49,7 @@
     >Отправить </button>
   </p>
 
-  <div class="modal">
+  <div class="modal" v-if="modal">
     <div class="modal__content">
       <h2>Modal</h2>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae eligendi rem nulla voluptatum. Magnam praesentium, ex sit nulla maiores nemo.</p>
@@ -75,6 +75,7 @@ export default {
     errors: [],
     name: null,
     pass: null,
+    modal: false
    
   }
 
@@ -85,7 +86,7 @@ export default {
  methods: {
 
     modal() {
-
+     this.modal = !this.modal
     },
     checkForm(e) {
       if (this.name && this.age) {
